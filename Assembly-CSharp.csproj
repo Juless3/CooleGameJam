@@ -41,17 +41,17 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Inky\InkEvents.cs" />
      <Compile Include="Assets\Scripts\Interactions\Interaction.cs" />
      <Compile Include="Assets\Scripts\Interactions\GameState.cs" />
+     <Compile Include="Assets\Scripts\Inky\InkDialogueStarter.cs" />
      <Compile Include="Assets\Input\PlayerInput.cs" />
+     <Compile Include="Assets\Scripts\Inky\DialogueController.cs" />
      <Compile Include="Assets\Scripts\Interactions\Interactable.cs" />
      <Compile Include="Assets\Scripts\Interactions\Collectable.cs" />
-     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
-     <Compile Include="Assets\Scripts\Inky\InkEvents.cs" />
-     <Compile Include="Assets\Scripts\Inky\DialogueController.cs" />
-     <Compile Include="Assets\Scripts\Inky\DialogueBox.cs" />
-     <Compile Include="Assets\Scripts\Inky\InkDialogueStarter.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
+     <Compile Include="Assets\Scripts\Inky\DialogueBox.cs" />
+     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

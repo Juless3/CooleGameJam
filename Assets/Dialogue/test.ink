@@ -1,11 +1,12 @@
 === test ===
 
 = speaking
-???: Hello
+???: Hallo. Wenn du das hier lesen kannst,
+dann können wir gleichzeitog am projekt arbeiten uwu
 +[Hi] -> END
-+[No] -> speaking_2
++[JA MAN DAS IST SO TOLL] -> speaking_2
 
 = speaking_2
-???: wow, okay i guess
+???: AAAAAAAAAAHHHHHHHHHHH YEEHAWWWWW
 
 -> END
