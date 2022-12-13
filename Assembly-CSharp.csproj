@@ -41,12 +41,13 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
-     <Compile Include="Assets\Scripts\Interactions\Collectable.cs" />
-     <Compile Include="Assets\Scripts\Interactions\GameState.cs" />
      <Compile Include="Assets\Scripts\Interactions\Interaction.cs" />
-     <Compile Include="Assets\Scripts\Interactions\Interactable.cs" />
+     <Compile Include="Assets\Scripts\Interactions\GameState.cs" />
      <Compile Include="Assets\Input\PlayerInput.cs" />
+     <Compile Include="Assets\Scripts\Interactions\Interactable.cs" />
+     <Compile Include="Assets\Scripts\Interactions\Collectable.cs" />
+     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+     <None Include="Assets\Dialogue\Main.json" />
      <Reference Include="UnityEngine">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.8f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>
@@ -850,6 +851,12 @@
      </Reference>
      <Reference Include="Unity.VisualScripting.State">
      <HintPath>C:\Users\julia\GameJam\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
+     </Reference>
+     <Reference Include="Ink-Libraries">
+     <HintPath>C:\Users\julia\GameJam\Library\ScriptAssemblies\Ink-Libraries.dll</HintPath>
+     </Reference>
+     <Reference Include="InkEditor">
+     <HintPath>C:\Users\julia\GameJam\Library\ScriptAssemblies\InkEditor.dll</HintPath>
      </Reference>
   </ItemGroup>
   <ItemGroup>
