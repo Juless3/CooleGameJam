@@ -42,17 +42,20 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Inky\InkEvents.cs" />
+     <Compile Include="Assets\Scripts\Interactions\Reactor.cs" />
      <Compile Include="Assets\Scripts\Interactions\Interaction.cs" />
      <Compile Include="Assets\Scripts\Interactions\GameState.cs" />
+     <Compile Include="Assets\Scripts\Interactions\QuestEntry.cs" />
+     <Compile Include="Assets\Scripts\Interactions\StateUpdater.cs" />
      <Compile Include="Assets\Scripts\Inky\InkDialogueStarter.cs" />
      <Compile Include="Assets\Input\PlayerInput.cs" />
+     <Compile Include="Assets\Scripts\Sounds\SoundChange.cs" />
      <Compile Include="Assets\Scripts\Inky\DialogueController.cs" />
      <Compile Include="Assets\Scripts\Interactions\Interactable.cs" />
      <Compile Include="Assets\Scripts\Interactions\Collectable.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
      <Compile Include="Assets\Scripts\Inky\DialogueBox.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
-     <Compile Include="Assets\Scripts\Sounds\SoundChange.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
@@ -319,14 +322,17 @@
      <Reference Include="UnityEditor.UnityConnectModule">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.8f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.Burst.Cecil.Pdb">
+     <HintPath>B:\Unity Projekte\CooleGameJam\Library\PackageCache\com.unity.burst@1.7.3\Unity.Burst.CodeGen\Unity.Burst.Cecil.Pdb.dll</HintPath>
+     </Reference>
+     <Reference Include="Newtonsoft.Json">
+     <HintPath>B:\Unity Projekte\CooleGameJam\Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.Burst.Unsafe">
      <HintPath>B:\Unity Projekte\CooleGameJam\Library\PackageCache\com.unity.burst@1.7.3\Unity.Burst.Unsafe.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Burst.Cecil.Mdb">
      <HintPath>B:\Unity Projekte\CooleGameJam\Library\PackageCache\com.unity.burst@1.7.3\Unity.Burst.CodeGen\Unity.Burst.Cecil.Mdb.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.Burst.Cecil.Pdb">
-     <HintPath>B:\Unity Projekte\CooleGameJam\Library\PackageCache\com.unity.burst@1.7.3\Unity.Burst.CodeGen\Unity.Burst.Cecil.Pdb.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Burst.Cecil">
      <HintPath>B:\Unity Projekte\CooleGameJam\Library\PackageCache\com.unity.burst@1.7.3\Unity.Burst.CodeGen\Unity.Burst.Cecil.dll</HintPath>
@@ -336,9 +342,6 @@
      </Reference>
      <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
      <HintPath>B:\Unity Projekte\CooleGameJam\Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
-     </Reference>
-     <Reference Include="Newtonsoft.Json">
-     <HintPath>B:\Unity Projekte\CooleGameJam\Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
      </Reference>
      <Reference Include="netstandard">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.8f1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>
@@ -752,9 +755,9 @@
       <Project>{97abf5b9-41f2-f266-ea12-d270ff942c1a}</Project>
       <Name>Unity.2D.Path.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.VisualScripting.SettingsProvider.Editor.csproj">
-      <Project>{f706d162-7124-4e0b-a63b-5302a7e67423}</Project>
-      <Name>Unity.VisualScripting.SettingsProvider.Editor</Name>
+    <ProjectReference Include="FMODUnityResonanceEditor.csproj">
+      <Project>{7a62e7bb-c04a-42e0-df5d-05ca5c650660}</Project>
+      <Name>FMODUnityResonanceEditor</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEditor.UI.csproj">
       <Project>{3360856d-db0a-27f0-9a80-dd49b6f47718}</Project>
@@ -787,6 +790,10 @@
     <ProjectReference Include="Cinemachine.csproj">
       <Project>{00933c16-9ce5-3397-0bf2-32f36c3912dc}</Project>
       <Name>Cinemachine</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.VisualScripting.SettingsProvider.Editor.csproj">
+      <Project>{f706d162-7124-4e0b-a63b-5302a7e67423}</Project>
+      <Name>Unity.VisualScripting.SettingsProvider.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="com.unity.cinemachine.editor.csproj">
       <Project>{494ca0bc-4238-b880-26cf-139adb4d55d8}</Project>
@@ -924,17 +931,29 @@
       <Project>{1a77aef6-c5b1-6808-7a6f-b8606fe6d6b7}</Project>
       <Name>Unity.Timeline.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.csproj">
-      <Project>{bbff60d4-6c2c-0fdb-e083-b91bf2eadafe}</Project>
-      <Name>Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary</Name>
+    <ProjectReference Include="FMODUnity.csproj">
+      <Project>{4424b7db-71da-60bc-3ac7-9e4304363ef0}</Project>
+      <Name>FMODUnity</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.2D.Common.Runtime.csproj">
       <Project>{725b33de-9cab-a1b8-ed2b-07a9ce90ee2e}</Project>
       <Name>Unity.2D.Common.Runtime</Name>
     </ProjectReference>
+    <ProjectReference Include="FMODUnityEditor.csproj">
+      <Project>{c767c370-cde5-9ab9-5002-3f50ef9a5218}</Project>
+      <Name>FMODUnityEditor</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.2D.SpriteShape.Editor.csproj">
       <Project>{7936f75d-faf2-4b76-552e-ef73684fe8c7}</Project>
       <Name>Unity.2D.SpriteShape.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="FMODUnityResonance.csproj">
+      <Project>{4630daa6-ef64-4683-3f62-7a7ff299f8a6}</Project>
+      <Name>FMODUnityResonance</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.csproj">
+      <Project>{bbff60d4-6c2c-0fdb-e083-b91bf2eadafe}</Project>
+      <Name>Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.RenderPipelines.Core.Editor.csproj">
       <Project>{55c6f8de-213c-43bd-15f7-208ee470ca3f}</Project>
@@ -947,22 +966,6 @@
     <ProjectReference Include="Unity.VisualScripting.State.csproj">
       <Project>{e2ea4c14-764d-7360-ec1d-5b952412159b}</Project>
       <Name>Unity.VisualScripting.State</Name>
-    </ProjectReference>
-    <ProjectReference Include="FMODUnityResonanceEditor.csproj">
-      <Project>{7a62e7bb-c04a-42e0-df5d-05ca5c650660}</Project>
-      <Name>FMODUnityResonanceEditor</Name>
-    </ProjectReference>
-    <ProjectReference Include="FMODUnity.csproj">
-      <Project>{4424b7db-71da-60bc-3ac7-9e4304363ef0}</Project>
-      <Name>FMODUnity</Name>
-    </ProjectReference>
-    <ProjectReference Include="FMODUnityEditor.csproj">
-      <Project>{c767c370-cde5-9ab9-5002-3f50ef9a5218}</Project>
-      <Name>FMODUnityEditor</Name>
-    </ProjectReference>
-    <ProjectReference Include="FMODUnityResonance.csproj">
-      <Project>{4630daa6-ef64-4683-3f62-7a7ff299f8a6}</Project>
-      <Name>FMODUnityResonance</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
