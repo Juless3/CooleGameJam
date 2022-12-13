@@ -83,7 +83,20 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4961545075686000709, guid: c238c0671eeef9d41a4daa6dfa0499da, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4961545075686000709, guid: c238c0671eeef9d41a4daa6dfa0499da, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4961545075686000709, guid: c238c0671eeef9d41a4daa6dfa0499da, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4961545075686000709, guid: c238c0671eeef9d41a4daa6dfa0499da, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c238c0671eeef9d41a4daa6dfa0499da, type: 3}
 --- !u!1 &3097479229130793363 stripped
 GameObject:
