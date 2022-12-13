@@ -1,0 +1,255 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using Ink;
+using Ink.Runtime;
+using UnityEngine;
+using UnityEngine.EventSystems;
+
+public class DialogueController : MonoBehaviour
+{
+
+    private const string SpeakerSeparator = ":";
+    private const string EscapedColon = "::";
+    private const string EscapedColonPlaceholder = "$";
+
+    public static event Action DialogueOpened;
+    public static event Action DialogueClosed;
+    public static event Action<string> InkEvent; 
+
+
+    #region Inspector
+
+    [Header("Ink")]
+    [Tooltip("Compiled ink text asset")]
+    [SerializeField] private TextAsset inkAsset;
+    
+    [Header("UI")]
+    [Tooltip("DialogueBox to display the dialogue in")]
+    [SerializeField] private DialogueBox dialogueBox;
+    
+    #endregion
+
+    private GameState gameState;
+
+    private Story inkStory;
+
+    #region Unity Event Funktions
+
+    private void Awake()
+    {
+        gameState = FindObjectOfType<GameState>();
+        
+        //Initialize Ink
+        inkStory = new Story(inkAsset.text);
+        inkStory.onError += OnInkError;
+        inkStory.BindExternalFunction<string>("Unity_Event", Unity_Event);
+        inkStory.BindExternalFunction<string>("Get_State", Get_State);
+        inkStory.BindExternalFunction<string, int>("Add_State", Add_State);
+    }
+
+    private void OnEnable()
+    {
+        DialogueBox.DialogueContinued += OnDialogueContinued;
+        DialogueBox.ChoiceSelected += OnChoiceSelected;
+    }
+
+    private void Start()
+    {
+        dialogueBox.gameObject.SetActive(false);
+    }
+
+    private void OnDisable()
+    {
+        DialogueBox.DialogueContinued -= OnDialogueContinued;
+        DialogueBox.ChoiceSelected -= OnChoiceSelected;
+    }
+    
+    private void OnDestroy()
+    {
+        inkStory.onError -= OnInkError;
+    }
+    #endregion
+
+    #region Dialogue Lifecycle
+
+                              //knot.stitch
+    public void StartDialogue(string dialoguePath)
+    {
+        OpenDialogue();
+        
+        //like " -> knot" in ink
+        inkStory.ChoosePathString(dialoguePath);
+        ContinueDialogue();
+    }
+
+    private void OpenDialogue()
+    {
+        Debug.Log("Opened Dialogue");
+        dialogueBox.gameObject.SetActive(true);
+        DialogueOpened?.Invoke();
+    }
+
+    private void CloseDialogue()
+    {
+        dialogueBox.gameObject.SetActive(false);
+        //deselect everything in ui
+        EventSystem.current.SetSelectedGameObject(null);
+        DialogueClosed?.Invoke();
+    }
+
+    private void ContinueDialogue()
+    {
+        if (IsAtEnd())
+        {
+            CloseDialogue();
+            return;
+        }
+
+        DialogueLine line;
+        
+        if (CanContinue())
+        {
+            string inkLine = inkStory.Continue();
+            //skip empty lines
+            if (string.IsNullOrWhiteSpace(inkLine))
+            {
+                ContinueDialogue();
+                return;
+            }
+
+            line = ParseText(inkLine, inkStory.currentTags);
+        }
+        else
+        {
+            line = new DialogueLine();
+        }
+
+        line.choices = inkStory.currentChoices;
+        
+        dialogueBox.DisplayText(line);
+    }
+
+    private void SelectChoice(int choiceIndex)
+    {
+        inkStory.ChooseChoiceIndex(choiceIndex);
+        ContinueDialogue();
+    }
+
+    private void OnDialogueContinued(DialogueBox _)
+    {
+        ContinueDialogue();
+    }
+
+    private void OnChoiceSelected(DialogueBox _, int choiceIndex)
+    {
+        SelectChoice(choiceIndex);
+    }
+
+    #endregion
+
+    #region Ink
+
+    private DialogueLine ParseText(string inkLine, List<string> tags)
+    {
+        //replace :: with $ a placeholder to prevent splitting
+        inkLine = inkLine.Replace(EscapedColon, EscapedColonPlaceholder);
+        
+        //split only at unescaped
+        List<string> parts = inkLine.Split(SpeakerSeparator).ToList();
+
+        string speaker;
+        string text;
+
+        switch (parts.Count)
+        {
+            case 1:
+                speaker = null;
+                text = parts[0];
+                break;
+            case 2:
+                speaker = parts[0];
+                text = parts[1];
+                break; //wenn speaker viel redet aber der name nicht immer aufpoppen soll
+            default:
+                Debug.LogWarning($"Ink dialogue line was split at more {SpeakerSeparator} than expected." +
+                                 $"Please make sure to use {EscapedColon} for {SpeakerSeparator} inside the Text");
+                goto case 2;
+        }
+
+        DialogueLine line = new DialogueLine();
+        line.speaker = speaker?.Trim(); //trim macht leerzeichen an den rändern weg //nur wenn speaker nicht null ist
+        //replace $ back to :  for display on the UI
+        line.text = text.Replace(EscapedColonPlaceholder, SpeakerSeparator).Trim();
+
+        if (tags.Contains(("thought")))
+        {
+            line.text = $"<i>{line.text}</i>";
+        }
+
+        return line;
+    }
+    
+    private bool CanContinue()
+    {
+        return inkStory.canContinue;
+    }
+
+    private bool HasChoices()
+    {
+        return inkStory.currentChoices.Count > 0;
+    }
+
+    private bool IsAtEnd()
+    {
+        return !CanContinue() && !HasChoices();
+    }
+    
+    private void OnInkError(string message, ErrorType type)
+    {
+        switch (type)
+        {
+            case ErrorType.Author:
+                break;
+            case ErrorType.Warning:
+                Debug.LogWarning(message);
+                break;
+            case ErrorType.Error:
+                Debug.LogError(message);
+                break;
+            default:
+                throw new ArgumentOutOfRangeException(nameof(type), type, null);
+        }
+    }
+
+    private void Unity_Event(string eventName)
+    {
+        InkEvent?.Invoke(eventName);
+    }
+    
+    #endregion
+
+    private object Get_State(string id)
+    {
+        State state = gameState.Get(id);
+        return state != null ? state.amount : 0;
+    }
+
+    private void Add_State(string id, int amount)
+    {
+        gameState.Add(id, amount);
+    }
+} 
+
+
+
+
+public struct DialogueLine
+{
+    public string speaker;
+    public string text;
+    public List<Choice> choices;
+    //Here we can also add other information
+    // bsp.: public Sprite speakerImage;
+
+}

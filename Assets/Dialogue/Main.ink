@@ -1,2 +1,2 @@
-INCLUDE Duckmen.ink
-INCLUDE Bridge.ink
+INCLUDE test.ink
+
