@@ -12,14 +12,22 @@ public class SoundChange : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D col)
     {
-       TrackOutOnEnter.SetParameter("Fade", 0);
-       TrackOnOnEnter.SetParameter("Fade", 1);
+        if (col.CompareTag("Player"))
+        {
+            TrackOutOnEnter.SetParameter("Fade", 0);
+            TrackOnOnEnter.SetParameter("Fade", 1);
+        }
+       
     }
     
 
     private void OnTriggerExit2D(Collider2D col)
     {
-        TrackOutOnEnter.SetParameter("Fade", 1);
-        TrackOnOnEnter.SetParameter("Fade", 0);
+        if (col.CompareTag("Player"))
+        {
+            TrackOutOnEnter.SetParameter("Fade", 1);
+            TrackOnOnEnter.SetParameter("Fade", 0);
+        }
+        
     }
 }
