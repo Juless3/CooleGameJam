@@ -763,7 +763,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1693913368481587350, guid: f6958a0c40fc1d94995b4b7a0dba4a4b, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1693913368481587350, guid: f6958a0c40fc1d94995b4b7a0dba4a4b, type: 3}
       propertyPath: m_AnchorMin.x
@@ -771,7 +771,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1693913368481587350, guid: f6958a0c40fc1d94995b4b7a0dba4a4b, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1693913368481587350, guid: f6958a0c40fc1d94995b4b7a0dba4a4b, type: 3}
       propertyPath: m_SizeDelta.x
@@ -815,7 +815,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1693913368481587350, guid: f6958a0c40fc1d94995b4b7a0dba4a4b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -125.05
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1693913368481587350, guid: f6958a0c40fc1d94995b4b7a0dba4a4b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1196,7 +1196,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 3.78
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2522,7 +2522,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1693913368481587350, guid: f6958a0c40fc1d94995b4b7a0dba4a4b, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1693913368481587350, guid: f6958a0c40fc1d94995b4b7a0dba4a4b, type: 3}
       propertyPath: m_AnchorMin.x
@@ -2530,7 +2530,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1693913368481587350, guid: f6958a0c40fc1d94995b4b7a0dba4a4b, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1693913368481587350, guid: f6958a0c40fc1d94995b4b7a0dba4a4b, type: 3}
       propertyPath: m_SizeDelta.x
@@ -2574,7 +2574,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1693913368481587350, guid: f6958a0c40fc1d94995b4b7a0dba4a4b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -78.229996
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1693913368481587350, guid: f6958a0c40fc1d94995b4b7a0dba4a4b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3580,7 +3580,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1693913368481587350, guid: f6958a0c40fc1d94995b4b7a0dba4a4b, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1693913368481587350, guid: f6958a0c40fc1d94995b4b7a0dba4a4b, type: 3}
       propertyPath: m_AnchorMin.x
@@ -3588,7 +3588,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1693913368481587350, guid: f6958a0c40fc1d94995b4b7a0dba4a4b, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1693913368481587350, guid: f6958a0c40fc1d94995b4b7a0dba4a4b, type: 3}
       propertyPath: m_SizeDelta.x
@@ -3632,7 +3632,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1693913368481587350, guid: f6958a0c40fc1d94995b4b7a0dba4a4b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -31.41
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1693913368481587350, guid: f6958a0c40fc1d94995b4b7a0dba4a4b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3753,7 +3753,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6420449400842149094, guid: 118ca01dcde53554f8ea0db75b44e5cc, type: 3}
       propertyPath: moveSpeed
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6420449401200920666, guid: 118ca01dcde53554f8ea0db75b44e5cc, type: 3}
       propertyPath: m_TagString

@@ -14,22 +14,23 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
+        rigidbody = GetComponent<Rigidbody2D>();
+        
         input = new PlayerInput();
         interact = input.Player.Interact;
         input.Player.Interact.performed += Interact;
     }
-    private void Update()
-    {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
-    }
-
 
     private void FixedUpdate()
     {
         rigidbody.MovePosition(rigidbody.position + movement * (moveSpeed * Time.fixedDeltaTime));
     }
 
+
+    private void OnMovement(InputValue value)
+    {
+        movement = value.Get<Vector2>();
+    }
     private void OnDisable()
     {
         DisableInput();
@@ -99,7 +100,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void DisableInput()
     {
-        input.Disable();
+        input.Disable(); 
     }
     
     public void EnableInput()
