@@ -2050,7 +2050,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3337606201430039561, guid: c23be2b8cee68a04eaa09f6b2b5ce105, type: 3}
       propertyPath: onCollected.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3337606201430039561, guid: c23be2b8cee68a04eaa09f6b2b5ce105, type: 3}
       propertyPath: onCollected.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -2067,7 +2067,7 @@ PrefabInstance:
     - target: {fileID: 3337606201430039561, guid: c23be2b8cee68a04eaa09f6b2b5ce105, type: 3}
       propertyPath: onCollected.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1542843042}
+      objectReference: {fileID: 0}
     - target: {fileID: 3337606201430039561, guid: c23be2b8cee68a04eaa09f6b2b5ce105, type: 3}
       propertyPath: onCollected.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -2712,11 +2712,6 @@ Transform:
   m_Father: {fileID: 2112442482}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1542843042 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8806514208205266740, guid: 1cfb39ac6d16aac43abae6946038934e, type: 3}
-  m_PrefabInstance: {fileID: 7407729926658442418}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1623970603
 PrefabInstance:
   m_ObjectHideFlags: 0
