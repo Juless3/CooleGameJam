@@ -6,28 +6,30 @@ using UnityEngine;
 
 public class SoundChange : MonoBehaviour
 {
-    [SerializeField] private StudioEventEmitter TrackOutOnEnter;
-    [SerializeField] private StudioEventEmitter TrackOnOnEnter; 
- 
-    
-    private void OnTriggerEnter2D(Collider2D col)
-    {
-        if (col.CompareTag("Player"))
-        {
-            TrackOutOnEnter.SetParameter("Fade", 0);
-            TrackOnOnEnter.SetParameter("Fade", 1);
-        }
-       
-    }
-    
+    [SerializeField] private StudioEventEmitter Track1;
+    [SerializeField] private StudioEventEmitter Track2;
 
-    private void OnTriggerExit2D(Collider2D col)
+    [SerializeField] private GameObject Track1Object;
+    [SerializeField] private GameObject Track2Object;
+
+    private void Awake()
     {
-        if (col.CompareTag("Player"))
-        {
-            TrackOutOnEnter.SetParameter("Fade", 1);
-            TrackOnOnEnter.SetParameter("Fade", 0);
-        }
-        
+        Track1Object.SetActive(true);
     }
+
+    public void Track1Off()
+    {
+        Track1.SetParameter("Fade", 0);
+        Track2.SetParameter("Fade", 1);
+        Track1Object.SetActive(false);
+        Track2Object.SetActive(true);
+    }
+    public void Track2Off()
+    {
+        Track1.SetParameter("Fade", 1);
+        Track2.SetParameter("Fade", 0);
+        Track1Object.SetActive(true);
+        Track2Object.SetActive(false);
+    }
+   
 }
