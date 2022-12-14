@@ -1,7 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FMODUnity", "FMODUnity.csproj", "{80c103ea-d64e-5fcc-715f-8bf2d95d8e6e}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{1a3d2235-ba0a-003e-d682-2f913f0eb5dc}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FMODUnityResonance", "FMODUnityResonance.csproj", "{b8a64ca5-b366-c15f-2f1d-f6f3b8f7cc4e}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FMODUnityEditor", "FMODUnityEditor.csproj", "{8cfdd095-6261-0d90-80ca-5a782cfbcae0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FMODUnityResonanceEditor", "FMODUnityResonanceEditor.csproj", "{2b78d168-f9ee-ff8d-cc1c-18dc8fce2bab}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{b52c8986-99aa-73ba-e94b-a7d1c9b3df2f}"
 EndProject
@@ -10,8 +18,16 @@ Global
 		Debug|Any CPU = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{80c103ea-d64e-5fcc-715f-8bf2d95d8e6e}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80c103ea-d64e-5fcc-715f-8bf2d95d8e6e}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1a3d2235-ba0a-003e-d682-2f913f0eb5dc}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1a3d2235-ba0a-003e-d682-2f913f0eb5dc}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{b8a64ca5-b366-c15f-2f1d-f6f3b8f7cc4e}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{b8a64ca5-b366-c15f-2f1d-f6f3b8f7cc4e}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8cfdd095-6261-0d90-80ca-5a782cfbcae0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8cfdd095-6261-0d90-80ca-5a782cfbcae0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2b78d168-f9ee-ff8d-cc1c-18dc8fce2bab}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2b78d168-f9ee-ff8d-cc1c-18dc8fce2bab}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{b52c8986-99aa-73ba-e94b-a7d1c9b3df2f}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{b52c8986-99aa-73ba-e94b-a7d1c9b3df2f}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
