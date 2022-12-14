@@ -23,3 +23,9 @@ What is this then?
 Legs Luther: AAAAAAAAAAAAAAH!!!
 GET THAT THING AWAY FROM ME!!!
 You: Ahahaha...  -> END
+
+= spider_after
+Legs Luther: ...
+My nets...
+Must protect my perfect nets...
+-> END

@@ -1,13 +1,23 @@
 === otter ===
 
 = otter_chitchat
-Otter: I used to be a great sailor.
+Captain Cotter the Otter: Hey kid.
+You: Kid...? Are you talking to me?
+Captain Cotter the Otter: Do you see anyone else around?
+You: ...
++ [Don't call me kid ever again.]
+Captain Cotter the Otter: Why not? 
+You: I'M NOT A CHILD!!!
+Captain Cotter the Otter: ... -> END
++ [What scares you?]
+Captain Cotter the Otter: Me and scared?
+Ha! Never!
+Lemme tell you something kid. 
 I used to fight against huge seamonsters.
-+ [Tell me more]
-I've called her my green Lady. My green nemesis.
-The biggest sea creature I've ever seen.
-Frightening. -> END
-+ [Yeah, sure...]
-Wow. Really?
+HUGE.
+Those were scary times. Frightening even.
+But I managed to kill all of them. ALL OF THEM.
+So kid, nothing scares me anymore.
+You: Uhhh... Yeah, sure...
 
 -> END

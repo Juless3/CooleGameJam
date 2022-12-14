@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public PlayerInput input;
     private InputAction interact;
     private Interactable selectedInteractable;
+    public Animator animator;
 
     private void Awake()
     {
@@ -19,6 +20,14 @@ public class PlayerMovement : MonoBehaviour
         input = new PlayerInput();
         interact = input.Player.Interact;
         input.Player.Interact.performed += Interact;
+    }
+
+
+    private void Update()
+    {
+        animator.SetFloat("Horizontal", movement.x);
+        animator.SetFloat("Vertical", movement.y);
+        animator.SetFloat("Speed", movement.sqrMagnitude);
     }
 
     private void FixedUpdate()
