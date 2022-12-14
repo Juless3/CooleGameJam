@@ -750,7 +750,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1693913368481587350, guid: f6958a0c40fc1d94995b4b7a0dba4a4b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 86.56
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1693913368481587350, guid: f6958a0c40fc1d94995b4b7a0dba4a4b, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -2509,7 +2509,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1693913368481587350, guid: f6958a0c40fc1d94995b4b7a0dba4a4b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 86.56
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1693913368481587350, guid: f6958a0c40fc1d94995b4b7a0dba4a4b, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -3384,6 +3384,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 353440664}
     m_Modifications:
     - target: {fileID: 1721607116, guid: a01b8e0185e4c0c44a9bdf2c9ed37cbc, type: 3}
+      propertyPath: onInteracted.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1721607116, guid: a01b8e0185e4c0c44a9bdf2c9ed37cbc, type: 3}
       propertyPath: onInteracted.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1835604195}
@@ -3434,6 +3438,22 @@ PrefabInstance:
     - target: {fileID: 1935497210224840780, guid: a01b8e0185e4c0c44a9bdf2c9ed37cbc, type: 3}
       propertyPath: m_Name
       value: Frog
+      objectReference: {fileID: 0}
+    - target: {fileID: 5325027998992567877, guid: a01b8e0185e4c0c44a9bdf2c9ed37cbc, type: 3}
+      propertyPath: onInteracted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1835604195}
+    - target: {fileID: 5325027998992567877, guid: a01b8e0185e4c0c44a9bdf2c9ed37cbc, type: 3}
+      propertyPath: onInteracted.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 5325027998992567877, guid: a01b8e0185e4c0c44a9bdf2c9ed37cbc, type: 3}
+      propertyPath: onInteracted.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: FMODUnity.StudioEventEmitter, FMODUnity
+      objectReference: {fileID: 0}
+    - target: {fileID: 5325027998992567877, guid: a01b8e0185e4c0c44a9bdf2c9ed37cbc, type: 3}
+      propertyPath: onInteracted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a01b8e0185e4c0c44a9bdf2c9ed37cbc, type: 3}
@@ -3510,7 +3530,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1693913368481587350, guid: f6958a0c40fc1d94995b4b7a0dba4a4b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 86.56
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1693913368481587350, guid: f6958a0c40fc1d94995b4b7a0dba4a4b, type: 3}
       propertyPath: m_AnchoredPosition.y

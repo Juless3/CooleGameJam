@@ -49,12 +49,14 @@ public class GameController : MonoBehaviour
         // In the editor: Unlock with ESC.
         Cursor.lockState = CursorLockMode.Locked;
         player.EnableInput();
+        player.moveSpeed = 5f;
     }
 
     private void EnterDialogueMode()
     {
         Cursor.lockState = CursorLockMode.None;
         player.DisableInput();
+        player.moveSpeed = 0f;
     }
 
     #endregion
