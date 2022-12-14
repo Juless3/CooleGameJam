@@ -12,10 +12,12 @@ public class PlayerMovement : MonoBehaviour
     private InputAction interact;
     private Interactable selectedInteractable;
     public Animator animator;
+    private GameController gameController;
 
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
+        gameController = FindObjectOfType<GameController>();
         
         input = new PlayerInput();
         interact = input.Player.Interact;
@@ -25,9 +27,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        animator.SetFloat("Horizontal", movement.x);
-        animator.SetFloat("Vertical", movement.y);
-        animator.SetFloat("Speed", movement.sqrMagnitude);
+        if (gameController.cantMove == false)
+        {
+            animator.SetFloat("Horizontal", movement.x);
+            animator.SetFloat("Vertical", movement.y);
+            animator.SetFloat("Speed", movement.sqrMagnitude);
+        }
+        
     }
 
     private void FixedUpdate()

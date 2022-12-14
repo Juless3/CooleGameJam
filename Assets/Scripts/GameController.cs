@@ -5,6 +5,8 @@ public class GameController : MonoBehaviour
     private PlayerMovement player;
 
     private DialogueController dialogueController;
+
+    public bool cantMove;
     
     #region Unity Event Functions
 
@@ -46,6 +48,7 @@ public class GameController : MonoBehaviour
 
     private void EnterPlayMode()
     {
+        cantMove = false;
         // In the editor: Unlock with ESC.
         Cursor.lockState = CursorLockMode.Locked;
         player.EnableInput();
@@ -54,6 +57,7 @@ public class GameController : MonoBehaviour
 
     private void EnterDialogueMode()
     {
+        cantMove = true;
         Cursor.lockState = CursorLockMode.None;
         player.DisableInput();
         player.moveSpeed = 0f;
