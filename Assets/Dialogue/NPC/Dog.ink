@@ -22,7 +22,7 @@ Dog: Just... BECAUSE!
 = dog_scared
 You: Boooooooooooo~
 I am a ghost~
-Dog: OH NO! THE HUMAN WAS RIGHT!
+Dog: OH NO! I HATE GHOSTS!!
 I DON'T LOVE HALLOWEEN!!
 You: Ahahahaha... hahaha... HAHAHAHAHAHA...
 + [HAHAHAHA]
@@ -37,5 +37,8 @@ Can't believe he fell for that...
 Dog: I hate halloween.
 I hate EVERYTHING.
 I am ANXIOUS.
-You: I feel slightly better now.
+You: This is great.
+Dog: Oh no... It scared me so much I really need to go "on a walk"...
+If you know what I mean...
+You: Ugh, what a mess. 
 -> END
