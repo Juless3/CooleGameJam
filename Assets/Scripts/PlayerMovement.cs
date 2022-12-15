@@ -167,6 +167,7 @@ public class PlayerMovement : MonoBehaviour
         
         if (isPaused)
         {
+            input.Player.Interact.performed -= Interact;
             Cursor.lockState = CursorLockMode.None;
             var eventSystem = EventSystem.current;
             eventSystem.SetSelectedGameObject(resumeButton, new BaseEventData(eventSystem));
@@ -176,6 +177,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
+            input.Player.Interact.performed += Interact;
             Cursor.lockState = CursorLockMode.Locked;
             gameController.cantMove = false;
             pauseMenu.SetActive(false);
@@ -185,6 +187,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void ResumeGame()
     {
+        input.Player.Interact.performed += Interact;
         Cursor.lockState = CursorLockMode.None;
         isPaused = false;
         gameController.cantMove = false;
