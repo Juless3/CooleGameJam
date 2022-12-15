@@ -14,7 +14,7 @@ public class SoundChange : MonoBehaviour
 
     private void Awake()
     {
-        Track1Object.SetActive(true);
+        
     }
 
     public void Track1Off()

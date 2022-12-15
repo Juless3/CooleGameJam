@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     private Interactable selectedInteractable;
     public Animator animator;
     private GameController gameController;
+    [SerializeField] private Footsteps footsteps;
 
     private void Awake()
     {
@@ -129,5 +130,14 @@ public class PlayerMovement : MonoBehaviour
         input.Enable();
     }
     
+    #endregion
+
+    #region Sounds
+
+    private void PlayFootstep()
+    {
+        footsteps.WalkSound();
+    }
+
     #endregion
 }
