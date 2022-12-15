@@ -70,6 +70,7 @@ GameObject:
   - component: {fileID: 6420449400842149095}
   - component: {fileID: 6420449400842149094}
   - component: {fileID: 5913689931282876870}
+  - component: {fileID: 4999887225387076255}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -163,6 +164,32 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!61 &4999887225387076255
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6420449400842149093}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0025350302, y: 0.012675121}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.34596553, y: 0.79212844}
+  m_EdgeRadius: 0
 --- !u!1 &6420449401200920666
 GameObject:
   m_ObjectHideFlags: 0
