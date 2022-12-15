@@ -10,19 +10,28 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 movement;
     public PlayerInput input;
     private InputAction interact;
+    private InputAction pause;
     private Interactable selectedInteractable;
     public Animator animator;
     private GameController gameController;
     [SerializeField] private Footsteps footsteps;
+    
+    private static bool isPaused;
+    [SerializeField] private GameObject pauseMenu;
 
     private void Awake()
     {
+        pauseMenu.SetActive(false);
         rigidbody = GetComponent<Rigidbody2D>();
         gameController = FindObjectOfType<GameController>();
-        
+
         input = new PlayerInput();
         interact = input.Player.Interact;
+        pause = input.Player.Pause;
+        
         input.Player.Interact.performed += Interact;
+        input.Player.Pause.performed += PauseGame;
+
     }
 
 
@@ -139,5 +148,28 @@ public class PlayerMovement : MonoBehaviour
         footsteps.WalkSound();
     }
 
+    #endregion
+
+    #region Menu
+
+    public void PauseGame(InputAction.CallbackContext _)
+    {
+        isPaused = !isPaused;
+        
+        if (isPaused)
+        {
+            gameController.cantMove = true;
+            pauseMenu.SetActive(true);
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            gameController.cantMove = false;
+            pauseMenu.SetActive(false);
+            Time.timeScale = 1f;
+        }
+    }
+
+    
     #endregion
 }
