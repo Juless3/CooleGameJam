@@ -14,8 +14,12 @@ public class SnowFootsteps : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        _steps.isSnow = true;
-        _steps.isStone = false;
-        _steps.isWood = false;
+
+        if (other.CompareTag("Feet"))
+        {
+            _steps.isSnow = true;
+            _steps.isStone = false;
+            _steps.isWood = false;
+        }
     }
 }
