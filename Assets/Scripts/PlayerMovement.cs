@@ -3,6 +3,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -15,15 +16,21 @@ public class PlayerMovement : MonoBehaviour
     private Interactable selectedInteractable;
     public Animator animator;
     private GameController gameController;
-    [SerializeField] private Footsteps footsteps;
+    private Footsteps footsteps;
     
+    [Header ("Menu")]
     private static bool isPaused;
+
+    [SerializeField] private GameObject optionMenu;
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject resumeButton;
+    [SerializeField] private GameObject backButton;
 
     private void Awake()
     {
         pauseMenu.SetActive(false);
+        optionMenu.SetActive(false);
+        
         rigidbody = GetComponent<Rigidbody2D>();
         gameController = FindObjectOfType<GameController>();
 
@@ -154,12 +161,13 @@ public class PlayerMovement : MonoBehaviour
 
     #region Menu
 
-    public void PauseGame(InputAction.CallbackContext _)
+    private void PauseGame(InputAction.CallbackContext _)
     {
         isPaused = !isPaused;
         
         if (isPaused)
         {
+            Cursor.lockState = CursorLockMode.None;
             var eventSystem = EventSystem.current;
             eventSystem.SetSelectedGameObject(resumeButton, new BaseEventData(eventSystem));
             gameController.cantMove = true;
@@ -168,12 +176,38 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
+            Cursor.lockState = CursorLockMode.Locked;
             gameController.cantMove = false;
             pauseMenu.SetActive(false);
             Time.timeScale = 1f;
         }
     }
 
+    public void ResumeGame()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        isPaused = false;
+        gameController.cantMove = false;
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1f;
+    }
+
+    public void GoToMainMenu()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void OptionsOpened()
+    {
+        var eventSystem = EventSystem.current;
+        eventSystem.SetSelectedGameObject(backButton, new BaseEventData(eventSystem));
+    }
+    public void PauseOpened()
+    {
+        var eventSystem = EventSystem.current;
+        eventSystem.SetSelectedGameObject(resumeButton, new BaseEventData(eventSystem));
+    }
     
     #endregion
 }
