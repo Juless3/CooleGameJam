@@ -1,6 +1,7 @@
 using System;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
@@ -18,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     
     private static bool isPaused;
     [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private GameObject resumeButton;
 
     private void Awake()
     {
@@ -158,6 +160,8 @@ public class PlayerMovement : MonoBehaviour
         
         if (isPaused)
         {
+            var eventSystem = EventSystem.current;
+            eventSystem.SetSelectedGameObject(resumeButton, new BaseEventData(eventSystem));
             gameController.cantMove = true;
             pauseMenu.SetActive(true);
             Time.timeScale = 0f;

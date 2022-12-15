@@ -44,6 +44,7 @@
      <Compile Include="Assets\Scripts\Sounds\Footsteps.cs" />
      <Compile Include="Assets\Scripts\Inky\InkEvents.cs" />
      <Compile Include="Assets\Scripts\Sounds\SnowFootsteps.cs" />
+     <Compile Include="Assets\Scripts\Menus\PauseMenu.cs" />
      <Compile Include="Assets\Scripts\Interactions\Reactor.cs" />
      <Compile Include="Assets\Scripts\Interactions\Interaction.cs" />
      <Compile Include="Assets\Scripts\Interactions\GameState.cs" />
@@ -61,7 +62,6 @@
      <Compile Include="Assets\Scripts\GameController.cs" />
      <Compile Include="Assets\Scripts\Inky\DialogueBox.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
-     <Compile Include="Assets\Scripts\Menus\PauseMenu.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
