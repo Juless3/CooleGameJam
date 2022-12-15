@@ -4,6 +4,10 @@ INCLUDE Collectables/bedsheet.ink
 INCLUDE NPC/Otter.ink
 INCLUDE NPC/Dog.ink
 INCLUDE NPC/Spider.ink
+INCLUDE NPC/Frog.ink
+INCLUDE Unable/1stDoor.ink
+
+
 
 
 

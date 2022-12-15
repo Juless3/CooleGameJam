@@ -1,7 +1,8 @@
 === spider ===
 
 = spider_chitchat
-Legs Luther: You're a really weird spider. 
+Legs Luther: You're a really weird spider.
+Where are your legs?
 + [Are you blind?]
 You: Open your eyes. I'm not a spider.
 Legs Luther: Eww... -> END
