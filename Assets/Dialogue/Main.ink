@@ -6,6 +6,8 @@ INCLUDE NPC/Dog.ink
 INCLUDE NPC/Spider.ink
 INCLUDE NPC/Frog.ink
 INCLUDE Unable/1stDoor.ink
+INCLUDE Utility/ExternalFunctions.ink
+
 
 
 

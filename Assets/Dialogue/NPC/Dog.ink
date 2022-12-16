@@ -40,5 +40,6 @@ I am ANXIOUS.
 You: This is great.
 Dog: Oh no... It scared me so much I really need to go "on a walk"...
 If you know what I mean...
-You: Ugh, what a mess. 
+You: Ugh, what a mess. #goaway
+{Unity_Event("goaway")}
 -> END

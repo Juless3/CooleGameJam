@@ -14238,6 +14238,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6420449401200920667, guid: 118ca01dcde53554f8ea0db75b44e5cc, type: 3}
   m_PrefabInstance: {fileID: 1942667136}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1059217338 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8141381596956482935, guid: cb51419189bb1004ab5080a87400031f, type: 3}
+  m_PrefabInstance: {fileID: 1394743311}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1061076956
 GameObject:
   m_ObjectHideFlags: 0
@@ -24401,6 +24406,7 @@ GameObject:
   - component: {fileID: 1970692239}
   - component: {fileID: 1970692241}
   - component: {fileID: 1970692240}
+  - component: {fileID: 1970692242}
   m_Layer: 0
   m_Name: DogAfter
   m_TagString: Untagged
@@ -24512,6 +24518,35 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
   nextInteraction: {fileID: 0}
+--- !u!114 &1970692242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1970692238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7eee986654266946bf48766e44a5c4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inkEvents:
+  - name: goaway
+    onEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1059217338}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1972059969
 GameObject:
   m_ObjectHideFlags: 0
