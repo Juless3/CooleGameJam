@@ -11,3 +11,17 @@ Hate when they do that. -> END
 Those annoying kids always trying to get as much sugar as they can.
 Disgusting. -> END
 
+= ending
+You: Wow... I really did it...
+I finally scared all of them...
+Man...
+I am the best.
+Now I can dream about their ruined halloween and their misery.
+I feel great.
+-> END
+
+= night
+
+You: Good night to me...
+{Unity_Event("GoToMainMenu")}
+-> END
